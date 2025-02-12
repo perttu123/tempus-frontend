@@ -61,9 +61,7 @@ export default function PricesChart(){
             dictionar[day].total += 1;
             dictionar[day].value += item.value;
           });
-          formattedData = Object.keys(dictionar).map(item =>({
-            date: item
-          }))
+
           break;
 
           case "week":
