@@ -7,7 +7,7 @@ import Footer from "./Footer";
 import '../styles/Contact.css';
 
 export default function Contact(){
-
+//asdasd
     const navigate = useNavigate();
     const [message, setMessage] = useState("");
     const [email, setEmail] = useState("");
