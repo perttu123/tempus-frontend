@@ -1,0 +1,204 @@
+.filter-form-container {
+  padding: 2rem;
+  background-color: #f5ba3c; 
+  color: black;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.intro-text {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.intro-text a {
+  color: #007bff;
+}
+
+.intro-text a:hover {
+  text-decoration: underline;
+}
+
+.filter-form-container .submit-button {
+  width: 100%;
+  background-color: black;
+  border: 2px solid black;
+  
+}
+
+.filter-form-container .submit-button:hover {
+  background-color: #f5ba3c;
+  color: black;
+  border: 2px solid black;
+}
+
+.filter-options {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  background-color: #f5ba3c;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+.filter-options .btn {
+  flex: 1;
+  background-color: #f5ba3c ; 
+  border : 1px solid black;
+  color: black;
+}
+
+.filter-options .btn:hover {
+  background-color: black; 
+  border-color: black;
+  color: white; 
+}
+
+.filter-options .btn.selected {
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-controls .btn {
+  flex: 1;
+  margin:  0.5rem;
+}
+
+
+.chart-controls button {
+  background-color: black;
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+.chart-controls button:hover {
+  background-color: #f5ba3c;
+}
+
+.chart-controls button:disabled {
+  background-color: #ccc; 
+  cursor: not-allowed;
+}
+
+
+
+.graph-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.graph-options .form-check {
+  margin-bottom: 0.5rem;
+}
+
+.graph-options .form-check input[type="checkbox"]:checked {
+  background-color: black;
+  border-color: black;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  background-color: #fff; 
+  padding: 1rem; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.result-data-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff; 
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 1rem;
+}
+
+.result-data-summary {
+  flex: 1;
+  margin-right: 1rem; 
+}
+
+.result-data-summary h3 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem; 
+  color: #333; 
+}
+
+.result-data-summary p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem; 
+  color: #555; 
+}
+
+.result-data-summary .price-difference {
+  margin-top: 1rem;
+  font-weight: bold; 
+  color: #d9534f; 
+}
+
+.result-data-keywords {
+  flex: 1;
+  background-color: black; 
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.result-data-keywords p {
+  margin-bottom: 0.5rem;
+  font-size: 1rem; 
+  color: white; 
+}
+
+.result-data-keywords p .dynamic-value {
+  font-weight: bold;
+  color: #f5ba3c; 
+}
+
+.result-data-keywords p:first-of-type {
+  font-weight: bold; 
+}
+
+.loading-animation-container {
+  background-color: white; 
+  padding: 5rem; 
+  border-radius: 8px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 300px;
+}
+
+.loading-animation {
+  scale: 0.2;
+  background-color: white;
+}

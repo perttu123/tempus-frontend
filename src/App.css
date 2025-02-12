@@ -1,0 +1,155 @@
+.info-title {
+  font-size: 2rem;
+}
+
+.info-box {
+  background-color: #f5ba3c;
+  color: black;
+  padding: 3rem 1rem; 
+  max-width: 1320px;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  margin-top: 1.3rem;
+  margin: 1.3rem auto 1rem;
+}
+
+
+.info-text-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.info-text {
+  background-color: black;
+  color: white;
+  padding: 2rem;
+  border-radius: 30px;
+  margin: 1rem; 
+  width: calc(33% - 2rem); 
+  box-sizing: border-box; 
+}
+
+@media (max-width: 768px) {
+  .info-text {
+    width: calc(100% - 2rem); 
+    margin: 1rem 0; 
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+  }
+}
+
+.info-box b {
+  color: #f5ba3c;
+}
+
+.btn-service.active {
+  background-color: #f5ba3c !important;
+  color: black;
+}
+
+.header-text-center {
+  margin-left: 73px;
+}
+
+/*FOOTER*/
+
+.footer {
+  background-color: black;
+  width: 100%;
+  padding: 1rem 0;
+  margin-top: 50px;
+}
+
+.footer p {
+  color: white;
+  margin: 0;
+}
+ 
+.footer-links a {
+  color: white;
+  margin: 0 5px;
+  text-decoration: none;
+}
+ 
+.footer-links a:hover {
+  text-decoration: underline;
+}
+ 
+.footer-logo {
+  height: 68px;
+  width: 173px;
+  
+}
+ 
+.footer-icon {
+  color: #f5ba3c;
+  margin-right: 0 5px;
+  transition: color 0.3s ease;
+}
+ 
+.footer-icon-container {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+ 
+.footer-icon-container:hover .footer-icon {
+  color: #ffffff;
+}
+ 
+.footer-icon-container:hover::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-color: transparent;
+}
+
+.footer-links .footer-icon {
+  height: 32px;
+  width: 32px;
+}
+
+.footer-links a:not(:last-child)::after {
+  content: '|';
+  margin-left: 10px; 
+  margin-right: 10px; 
+  display: inline-block;
+  vertical-align: middle;
+  color: grey;
+}
+
+.github-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.github-dropdown-menu {
+  position: absolute;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  bottom: 35px; /* Adjust this for spacing from the icon */
+  left: 35px;
+  z-index: 100;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.github-dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+}
+.github-dropdown-menu a:hover {
+  background-color: #444;
+}

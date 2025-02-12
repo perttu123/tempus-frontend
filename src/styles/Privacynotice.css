@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.privacy-notice {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.privacy-section {
+    margin-bottom: 20px;
+}
+
+.privacy-header {
+    font-size: 1.5em; /* Adjust size as needed */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.privacy-content {
+    font-size: 1em; /* Adjust size as needed */
+    color: #555;
+}
+.back-button {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #f5ba3c;
+    color: black;
+    border: 2px solid black;
+}
+@media (max-width: 600px) {
+    .privacy-header {
+        font-size: 1.25em; /* Smaller size for mobile */
+    }
+
+    .privacy-content {
+        font-size: 0.9em; /* Smaller size for mobile */
+    }
+
+    .privacy-notice {
+        padding: 10px; /* Less padding for mobile */
+    }
+}

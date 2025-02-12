@@ -1,0 +1,51 @@
+
+export async function DefaultPrices(timePeriod: String){
+  
+  const today = new Date();
+  let startDate;
+  let endDate;
+
+  switch (timePeriod) {
+    case "today":
+      startDate = formatDate(new Date()); // Today
+      endDate = formatDate(new Date(today.setDate(today.getDate() + 1))); // tomorrow 
+      break;
+    case "day":
+      startDate = formatDate(new Date(today.setDate(today.getDate()-30))); // Today
+      endDate = formatDate(new Date()); // Today
+      break;
+    case "week":
+      startDate = formatDate(new Date(today.setDate(today.getDate() - 7))); // last 7 days
+      endDate = formatDate(new Date()); // today
+      break;
+    case "month":
+      startDate = formatDate(new Date(today.getFullYear(), today.getMonth() - 12, 1)); // First day 12 months ago
+      endDate = formatDate(new Date(today.getFullYear(), today.getMonth(), 0)); // Last day of last month
+      break;
+    default:
+      startDate = formatDate(new Date(today.getFullYear(), today.getMonth() - 1, 1)); // First day of last month
+      endDate = formatDate(new Date(today.getFullYear(), today.getMonth(), 0)); // Last day of last month
+      break;
+  }
+
+    const query = new URLSearchParams({
+        startDate: startDate,
+        endDate: endDate
+      });
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_PRICES}?${query}`);
+
+    if (response.ok) {
+        const data = await response.json();
+        return data;
+        
+    } else {
+        throw new Error("Fetching didn't work.");
+    }
+}
+
+const formatDate = (date: Date) => {
+  let mm = String(date.getMonth() + 1); // Months are 0-based
+  let dd = String(date.getDate()); 
+  let yy = String(date.getFullYear()).slice(-2); // Get last two digits of year
+  return `${mm}.${dd}.${yy}`;
+};

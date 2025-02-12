@@ -1,0 +1,232 @@
+/* FIRST PHASE (STARTING INFORMATION*/
+
+.input-with-calendar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.year-label {
+    padding-left: 60px;
+    font-size: 15px;
+}
+
+.input-with-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 7px;
+}
+
+.fixprice-label {
+    padding-left: 60px;
+    font-size: 15px;
+}
+    
+/* SECOND PHASE (HOUSE TYPES) */
+
+.house-type-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.house-type-button {
+    background-color: black;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 15px;
+    width: 80px;
+    height: 80px;
+    color: white;
+    border: none;
+}
+
+.house-type-button:hover {
+    background-color: #2a353f;
+    transform:matrix(1.1, 0, 0, 1.1, 0, 0);
+    transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.house-type-button.selected {
+    background-color: #545658;
+    color: white;
+    border-radius: 15px;
+}
+
+.houseIconNames {
+    padding-top: 25px;
+    color: black;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .house-type-buttons {
+        gap: 50px;
+        flex-wrap: wrap; 
+    }
+
+    .house-type-button {
+        width: 60px;
+        height: 60px; 
+        font-size: 12px; 
+    }
+
+    .houseIconNames {
+        padding-top: 10px;
+    }
+
+    .house-type-button svg {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+
+.work-shift-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 10px;
+}
+
+.work-shift-button {
+    background-color: black;
+    padding: 15px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    border: none;
+    height: 100px;
+    width: 100px;
+}
+
+.work-shift-button:hover {
+    background-color: #2a353f;
+}
+
+.workShiftText {
+    margin: 0;
+    color: white;
+}
+
+.work-shift-button.selected {
+    background-color: #545658;
+    color: white;
+    border-radius: 15px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .work-shift-buttons {
+        gap: 20px; 
+        flex-wrap: wrap;
+    }
+
+    .work-shift-button {
+        width: 80px; 
+        height: 80px; 
+        padding: 10px; 
+    }
+
+    .workShiftText {
+        font-size: 12px; 
+    }
+}
+
+.input-with-sqrt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sqrt-label {
+    padding-left: 60px;
+}
+
+
+.input-with-resident {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.resident-label {
+    padding-left: 60px;
+}
+
+.workshift-label {
+    display: flex;
+    justify-content: center;
+}
+
+/* PHASE 5 APARTMENT HEATING TYPE*/
+
+.heatingTypeIcons {
+    padding-top: 25px;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .heatingTypeIcons {
+        padding: 10px;
+        font-size: 12px; 
+    }
+}
+
+
+/* PHASE 7 ELECTRIC CAR*/
+
+.input-with-cars {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cars-label {
+    padding-left: 60px;
+}
+
+.input-with-kwh {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kwh-label {
+    padding-left: 60px;
+}
+
+/* PHASE 8 SAUNA/FIREPLACE */
+
+.input-with-sauna {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sauna-label {
+    padding-left: 60px;
+}
+
+.input-with-fireplace {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fireplace-label {
+    padding-left: 60px;
+}
+
+/* PHASE 9 SOLAR PANEL */
+
+.input-with-solarpanel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.solarpanel-label {
+    padding-left: 60px;
+}

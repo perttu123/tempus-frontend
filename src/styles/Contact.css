@@ -1,0 +1,45 @@
+.form-container {
+    background-color: #f5ba3c;
+    color:black;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .centered-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    background-color: lightblue;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin: auto; /* Centers horizontally */
+  }
+
+  .btnContact {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: black;
+    color: white;
+    border: 2px solid black; 
+  }
+  
+  .btnContact:hover {
+    background-color: #f5ba3c;
+    color: black;
+    border: 2px solid black;
+  }

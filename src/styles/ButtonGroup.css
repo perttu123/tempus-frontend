@@ -1,0 +1,18 @@
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; 
+    margin-bottom: 1rem; 
+    }
+  
+  .btn-service {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s; 
+  }
+  
+  .btn-service:hover {
+    background-color: black;
+    color: white;
+  }
