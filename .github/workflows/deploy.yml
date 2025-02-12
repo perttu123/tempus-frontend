@@ -1,9 +1,9 @@
-name: CD pipeline
+name: Deploy React App to Azure
 
 on:
   push:
     branches:
-      -main
+      - main  # Fixing the missing space in "- main"
 
 jobs:
   deploy:
@@ -13,18 +13,21 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
     
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
       with:
-        dotnet-version: 8.0
+        node-version: 18  # Adjust to your project's Node.js version
 
-    - name: Build solution
-      run: dotnet publish -c Release -o publish
+    - name: Install dependencies
+      run: npm install  # Use "yarn install" if using Yarn
 
-    - name: Deploy to Azure
+    - name: Build the project
+      run: npm run build
+
+    - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: TempusFrontend
         slot-name: production
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-        package: ./publish
+        package: ./build  # Correct React build output folder
