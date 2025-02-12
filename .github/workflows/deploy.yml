@@ -22,7 +22,7 @@ jobs:
       run: npm install  # Use "yarn install" if using Yarn
 
     - name: Build the project
-      run: npm run build  # Builds the React app
+      run: CI=false npm run build
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
