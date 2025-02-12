@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import Lottie from 'lottie-react';
 import animationData from "./loadingAnimation.json";
 
+//testi
 interface Price {
   date: string;
   value: number;
