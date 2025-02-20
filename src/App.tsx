@@ -35,8 +35,6 @@ const App: React.FC = () => {
         return <FinGridCalculation />;
       case 'consumption':
         return <DirectiveCalculation />;
-      case 'chart':
-        return <PricesChart/>
       default:
         return <FinGridCalculation />;
     }
@@ -48,6 +46,13 @@ const App: React.FC = () => {
       <Container fluid>
         
         <InfoBox />
+        
+        <Row className="justify-content-center">
+          <Col md={8}>
+              <PricesChart/>  
+          </Col>
+        </Row> 
+        
         <ButtonGroup activeService={activeService} setActiveService={setActiveService} />
         <Row className="justify-content-center">
           <Col md={8}>

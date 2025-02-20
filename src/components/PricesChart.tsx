@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Lottie from 'lottie-react';
 import animationData from "./loadingAnimation.json";
+import '../styles/Chart.css';
 
-//testi2
 interface Price {
   date: string;
   value: number;
@@ -16,7 +16,7 @@ export default function PricesChart(){
 
     const { t } = useTranslation();
     const [prices, setPrices] = useState<Price[]>([]);
-    const [timePeriod, setTimePeriod] = useState<"today" | "day" | "week" | "month">("day")
+    const [timePeriod, setTimePeriod] = useState<"today" | "week" | "month">("today")
     const [loading, setLoading] = useState(false);
 
     useEffect(()=>{
@@ -27,9 +27,19 @@ export default function PricesChart(){
       else{
         TuoJaFormatoiData();
       }
-      console.log(prices);
-
     },[timePeriod])
+    
+    const isMobile = (() => {
+  
+      const userAgent = navigator.userAgent || navigator.vendor;
+      const mobileUserAgents = ['android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone'];
+    
+      const isMobileDevice = mobileUserAgents.some(mobileAgent => userAgent.toLowerCase().includes(mobileAgent));
+      const isMobileScreen = window.innerWidth <= 768;
+      const isMobile = isMobileDevice || isMobileScreen;
+    
+      return isMobile;
+    })
 
     async function TuoJaFormatoiData(){
 
@@ -37,7 +47,6 @@ export default function PricesChart(){
       const data: Price[] = await DefaultPrices(timePeriod);
       let formattedData: Price[] = [];
       const sortedData = [...data].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-      console.log(data);
 
       switch (timePeriod) {
         case "today":
@@ -49,19 +58,6 @@ export default function PricesChart(){
               minute: "2-digit",
             }),
           }));
-          break;
-
-        case "day":
-          
-          const dictionar: Record<string,{"total": number, "value": number}> = {}
-          
-          sortedData.forEach(item => {
-            const day = new Date(item.date).toLocaleTimeString();
-  
-            dictionar[day].total += 1;
-            dictionar[day].value += item.value;
-          });
-
           break;
 
           case "week":
@@ -115,31 +111,33 @@ export default function PricesChart(){
         default:
           break;
       }
-      sessionStorage.setItem(`${timePeriod}Data`, JSON.stringify(formattedData))
-      console.log("data: ", sessionStorage.getItem(timePeriod+"Data"));
+      sessionStorage.setItem(`${timePeriod}Data`, JSON.stringify(formattedData));
       setLoading(false);
       setPrices(formattedData);
     }
 
     const options = {
       responsive: true,
-      maintainAspectRatio: false, // Allow custom width/height adjustments
+      maintainAspectRatio: false, 
       plugins: {
         legend: {
           position: "top" as const,
+        },
+        datalabels: {
+          display: !isMobile(), 
         },
       },
       scales: {
         x: {
           title: {
             display: true,
-            text: `per ${timePeriod}`,  // Label for the x-axis (you can change this)
+            text: t("chart.x"),  // Label for the x-axis (you can change this)
           }
         },
         y: {
           title: {
             display: true,
-            text: "c/kWh price",  // Label for the x-axis (you can change this)
+            text: t("chart.y"),  // Label for the x-axis (you can change this)
           }
         }
       }
@@ -153,10 +151,10 @@ export default function PricesChart(){
       labels: prices.map((item) => item.date),
       datasets: [
           {
-              label: "c/kWh",
+              label: t("chart.label"),
               data: prices.map((item) => item.value),
               backgroundColor: prices.map((item) => 
-                item.date == formattedTime ? "rgba(255, 94, 0, 0.6)" : "rgba(211, 159, 17, 0.6)" 
+                item.date == formattedTime ? "rgba(191, 75, 8, 0.6)" : "rgba(211, 159, 17, 0.6)" 
               ),
           },
       ],
@@ -165,25 +163,22 @@ export default function PricesChart(){
     function RenderTitle(){
       switch (timePeriod) {
         case "today":
-          return <h3>{t("contact.chartTitleToday")}</h3>
-
-        case "day":
-          return <h3>{t("contact.chartTitleDay")}</h3>
+          return <h3>{t("chart.chartTitleToday")}</h3>
 
         case "week":
-          return <h3>{t("contact.chartTitleWeek")}</h3>
+          return <h3>{t("chart.chartTitleWeek")}</h3>
 
         case "month":
-          return <h3>{t("contact.chartTitleMonth")}</h3>
+          return <h3>{t("chart.chartTitleMonth")}</h3>
 
         default:
-          return <h3>{t("contact.chartTitleDay")}</h3>
+          return <h3>{t("chart.chartTitleToday")}</h3>
       }
     }
     return (
         <>
+    <div className='info-box-chart'>
       <Container className="form-container">
-
         <div className='section'>
           {RenderTitle()}
         </div>
@@ -205,12 +200,6 @@ export default function PricesChart(){
           >
           {t('day')}
           </Button>
-          <Button 
-            onClick={()=>setTimePeriod("day")}
-            className={timePeriod=="day" ? "btn selected" : "btn"}
-          >
-          {t('day')}
-          </Button>
           <Button
             onClick={()=>setTimePeriod("week")}
             className={timePeriod=="week" ? "btn selected" : "btn"}
@@ -226,6 +215,7 @@ export default function PricesChart(){
         </div>
 
       </Container>
+      </div>
 
         </>
     )

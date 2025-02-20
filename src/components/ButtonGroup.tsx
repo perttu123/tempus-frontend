@@ -27,13 +27,6 @@ const ButtonGroup = ({ activeService, setActiveService }: ButtonGroupProps) => {
       >
         {t('estimateConsumption')}
       </Button>
-      <Button
-        variant={activeService === 'chart' ? 'primary' : 'secondary'}
-        onClick={() => setActiveService('chart')}
-        className={`btn-service ${activeService === 'chart' ? 'active' : ''}`}
-      >
-        {t('electricityPrices')}
-      </Button>
     </div>
   );
 };

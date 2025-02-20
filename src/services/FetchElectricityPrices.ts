@@ -1,5 +1,5 @@
 
-export async function DefaultPrices(timePeriod: String){
+export async function DefaultPrices(timePeriod: string){
   
   const today = new Date();
   let startDate;
@@ -10,10 +10,6 @@ export async function DefaultPrices(timePeriod: String){
       startDate = formatDate(new Date()); // Today
       endDate = formatDate(new Date(today.setDate(today.getDate() + 1))); // tomorrow 
       break;
-    case "day":
-      startDate = formatDate(new Date(today.setDate(today.getDate()-30))); // Today
-      endDate = formatDate(new Date()); // Today
-      break;
     case "week":
       startDate = formatDate(new Date(today.setDate(today.getDate() - 7))); // last 7 days
       endDate = formatDate(new Date()); // today
@@ -23,8 +19,8 @@ export async function DefaultPrices(timePeriod: String){
       endDate = formatDate(new Date(today.getFullYear(), today.getMonth(), 0)); // Last day of last month
       break;
     default:
-      startDate = formatDate(new Date(today.getFullYear(), today.getMonth() - 1, 1)); // First day of last month
-      endDate = formatDate(new Date(today.getFullYear(), today.getMonth(), 0)); // Last day of last month
+      startDate = formatDate(new Date()); // Today
+      endDate = formatDate(new Date(today.setDate(today.getDate() + 1))); // tomorrow 
       break;
   }
 
@@ -32,6 +28,7 @@ export async function DefaultPrices(timePeriod: String){
         startDate: startDate,
         endDate: endDate
       });
+
     const response = await fetch(`${process.env.REACT_APP_BASE_URL}${process.env.REACT_APP_PRICES}?${query}`);
 
     if (response.ok) {

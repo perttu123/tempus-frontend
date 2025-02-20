@@ -58,7 +58,7 @@ export default function Contact(){
             </Form>
 
             <button className="back-button" onClick={()=>navigate("/")}>
-                {t('back')} 
+                {t('contact.back')} 
             </button>
 
         </Container>

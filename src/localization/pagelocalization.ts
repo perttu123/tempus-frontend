@@ -152,7 +152,6 @@ const resources = {
       "optimizedPriceDifference": "Optimized price difference:",
       "carInfo": "It is usually estimated that normal electric car consumpts about 1500-2000kWh per year.",
       "OptimizeInfo": "The optimized price difference consists of a calculation where we transfer 25% of your daytime consumption to night and morning hours, when electricity is generally cheaper.",
-      "back": "Back to homepage",
       "enterMarginal": "Marginal",
       "electricityPrices": "Prices today",
       "privacy": { //Privacy notice text
@@ -195,10 +194,17 @@ const resources = {
     "sendButton": "Send",
     "placeholder1": "Email...",
     "placeholder2": "Write message...",
+    "title": "Contact",
+    "back": "Back to homepage"
+  },
+  "chart":{
+    "x": "time",
+    "y": "cent/kWh",
     "chartTitleDay": "Todays prices",
-    "chartTitleWeek": "Week prices",
-    "chartTitleMonth": "Month prices",
-    "chartTitleToday": "Hourly prices today"
+    "chartTitleWeek": "Prices for the week",
+    "chartTitleMonth": "Monthly prices",
+    "chartTitleToday": "Hourly prices today",
+    "label": "cent/kWh"
   }
     }
   },
@@ -346,7 +352,6 @@ const resources = {
       "optimizedPriceDifference": "Optimoitu hintaero:",
       "carInfo": "Sähköauton keskimääräinen kulutus on noin 1500-2000kWh vuodessa",
       "OptimizeInfo": "Optimoitu hintaero perustuu laskentaan, jossa siirrämme 25% päivittäisestä kulutuksestasi yö- ja aamu tunneille, jolloin sähkö on yleensä halvempaa.",
-      "back": "Takaisin",
       "enterMarginal": "Marginaali",
       "electricityPrices": "Sähköhinnat",
       "privacy": { //Privacy notice text,
@@ -389,10 +394,17 @@ const resources = {
     "sendButton": "Lähetä",
     "placeholder1": "sähköposti...",
     "placeholder2": "kirjoita viesti...",
+    "title": "Ota yhteyttä",
+    "back": "Takaisin etusivulle",
+  },
+  "chart":{
+    "x": "aika",
+    "y": "snt/kWh",
+    "label": "snt/kWh",
     "chartTitleDay": "Päivän hinnat",
     "chartTitleWeek": "Viikon hinnat",
     "chartTitleMonth": "Hinnat kuukausittain",
-    "chartTitleToday": "Tunti hinnat tänään"
+    "chartTitleToday": "Tuntihinnat tänään",
   }
     }
   }
