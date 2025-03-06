@@ -406,7 +406,7 @@ const resources = {
     "chartTitleMonth": "Hinnat kuukausittain",
     "chartTitleToday": "Tuntihinnat tänään",
   }
-    }
+  }
   }
 };
 
